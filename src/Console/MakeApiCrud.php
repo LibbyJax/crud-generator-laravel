@@ -1,18 +1,18 @@
 <?php
 
-namespace Mrdebug\Crudgen\Console;
+namespace LibbyJax\Crudgen\Console;
 
 use Illuminate\Console\Command;
 
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
-use Mrdebug\Crudgen\Services\Api\MakeApiControllerService;
-use Mrdebug\Crudgen\Services\Api\MakeApiRequestService;
-use Mrdebug\Crudgen\Services\Api\MakeResourceService;
-use Mrdebug\Crudgen\Services\MakeGlobalService;
-use Mrdebug\Crudgen\Services\MakeMigrationService;
-use Mrdebug\Crudgen\Services\MakeModelService;
-use Mrdebug\Crudgen\Services\PathsAndNamespacesService;
+use LibbyJax\Crudgen\Services\Api\MakeApiControllerService;
+use LibbyJax\Crudgen\Services\Api\MakeApiRequestService;
+use LibbyJax\Crudgen\Services\Api\MakeResourceService;
+use LibbyJax\Crudgen\Services\MakeGlobalService;
+use LibbyJax\Crudgen\Services\MakeMigrationService;
+use LibbyJax\Crudgen\Services\MakeModelService;
+use LibbyJax\Crudgen\Services\PathsAndNamespacesService;
 
 class MakeApiCrud extends Command
 {

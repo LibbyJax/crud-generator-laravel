@@ -14,7 +14,7 @@ class MakeApiCrudTest extends TestCase
 
     public function setUp():void
     {
-        parent::setUp();
+        //parent::setUp();
         $this->artisan('rm:rest-api', ['crud_name'=>"post", "--force"=>true]);
         foreach(glob(database_path('migrations/').date('Y').'*') as $migration)
             File::delete($migration);

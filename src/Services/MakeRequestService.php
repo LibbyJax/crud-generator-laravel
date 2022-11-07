@@ -1,6 +1,6 @@
 <?php
 
-namespace Mrdebug\Crudgen\Services;
+namespace LibbyJax\Crudgen\Services;
 
 use Illuminate\Console\Concerns\InteractsWithIO;
 use Illuminate\Support\Facades\File;

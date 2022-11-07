@@ -1,11 +1,12 @@
 # Crud Generator Laravel 9 (your time saver)
 
 Crud Generator Laravel is a package that you can integrate in your Laravel to create a REAL CRUD :
-- **controller** with all the code already written
-- **views** (index, create, edit, show)
-- **model** with relationships
-- **request** file with rules
-- **migration** file
+
+-   **controller** with all the code already written
+-   **views** (index, create, edit, show)
+-   **model** with relationships
+-   **request** file with rules
+-   **migration** file
 
 And since 1.9.2, a complete **REST API** !
 
@@ -13,16 +14,15 @@ And since 1.9.2, a complete **REST API** !
 
 1\. Run composer command:
 
-``` composer require mrdebug/crudgen --dev```
+` composer require libbyjax/crudgen --dev`
 
 2\. If you don't use Laravel Collective Form package in your project, install it:
 
-``` composer require laravelcollective/html ```
+`composer require laravelcollective/html`
 
 3\. Publish config file and default-theme directory for views
 
-``` php artisan vendor:publish --provider="Mrdebug\Crudgen\CrudgenServiceProvider" ```
-
+`php artisan vendor:publish --provider="LibbyJax\Crudgen\CrudgenServiceProvider"`
 
 ## Usage
 
@@ -40,9 +40,9 @@ Let's do this 🙂
 
 #### CRUD generator command :
 
-``` php artisan make:crud nameOfYourCrud "column1:type, column2" ``` (theory)
+`php artisan make:crud nameOfYourCrud "column1:type, column2"` (theory)
 
-``` php artisan make:crud post "title:string, content:text" ``` (for our example)
+`php artisan make:crud post "title:string, content:text"` (for our example)
 
 <sub>[Available options](https://github.com/misterdebug/crud-generator-laravel/wiki/Available-options-when-you-use-make:crud-command)</sub>
 
@@ -69,8 +69,8 @@ If you look good, two migrations are created (`create_posts` AND `create_post_ta
 ### Migration
 
 Both migration files are created in your **database/migrations** directory. If necessary edit them and run :
-   
-``` php artisan migrate ```
+
+`php artisan migrate`
 
 ### Controller
 
@@ -80,13 +80,12 @@ A controller file is created in your **app/Http/Controllers** directory. All met
 
 To create your routes for this new controller, you can do this :
 
-``` Route::resource('posts', PostsController::class); ``` <sub>(don't forget to import your `PostsController` in your `web.php` file)</sub>
+`Route::resource('posts', PostsController::class);` <sub>(don't forget to import your `PostsController` in your `web.php` file)</sub>
 
 ##### Screenshots
 
 `/posts/create` :
 ![image](https://user-images.githubusercontent.com/23297600/192176702-dc0371f4-5d1b-49e3-a9ea-7352a33187d4.png)
-
 
 `/posts` :
 ![image](https://user-images.githubusercontent.com/23297600/192176845-b3722083-90a9-4257-90d1-8a2eb28baa01.png)
@@ -103,17 +102,17 @@ A views directory is created in your **resources/views** directory.
 <sub>You want to customize generated views ? [https://github.com/misterdebug/crud-generator-laravel/wiki/Custom-your-views](https://github.com/misterdebug/crud-generator-laravel/wiki/Custom-your-views)</sub>
 
 You can create views independently of the CRUD generator with :
-``` php artisan make:views nameOfYourDirectoryViews "column1:type, column2" ```
+`php artisan make:views nameOfYourDirectoryViews "column1:type, column2"`
 
 ## Finish your blog
 
 Add your `Comment` CRUD (with a column `comment` and a `post_id`)
 
-``` php artisan make:crud comment "comment:text, post_id:integer" ```
+`php artisan make:crud comment "comment:text, post_id:integer"`
 
 Add your `Tag` CRUD (with a `column` name)
 
-``` php artisan make:crud tag "name" ```
+`php artisan make:crud tag "name"`
 
 Finished 🎉
 
@@ -121,14 +120,13 @@ Finished 🎉
 
 You can delete all files (except migrations) created by the `make:crud` command at any time (you don't need to remove all files by hand)
 
-``` php artisan rm:crud nameOfYourCrud --force ```
+`php artisan rm:crud nameOfYourCrud --force`
 
-``` php artisan rm:crud post --force ``` (in our example)
+`php artisan rm:crud post --force` (in our example)
 
 --force (optional) can delete all files without confirmation
 
 ![image](https://user-images.githubusercontent.com/23297600/192183601-a4f8d206-3920-4f8a-8e0d-cf8442894e07.png)
-
 
 ## License
 

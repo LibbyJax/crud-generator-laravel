@@ -1,6 +1,6 @@
 <?php
 
-namespace Mrdebug\Crudgen\Services;
+namespace LibbyJax\Crudgen\Services;
 
 class PathsAndNamespacesService
 {

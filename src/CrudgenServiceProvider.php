@@ -1,6 +1,6 @@
 <?php
 
-namespace Mrdebug\Crudgen;
+namespace LibbyJax\Crudgen;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -33,11 +33,11 @@ class CrudgenServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/crudgen.php', 'crudgen');
 
         $this->commands(
-            'Mrdebug\Crudgen\Console\MakeCrud',
-            'Mrdebug\Crudgen\Console\MakeViews',
-            'Mrdebug\Crudgen\Console\RemoveCrud',
-            'Mrdebug\Crudgen\Console\MakeApiCrud',
-            'Mrdebug\Crudgen\Console\RemoveApiCrud'
+            'LibbyJax\Crudgen\Console\MakeCrud',
+            'LibbyJax\Crudgen\Console\MakeViews',
+            'LibbyJax\Crudgen\Console\RemoveCrud',
+            'LibbyJax\Crudgen\Console\MakeApiCrud',
+            'LibbyJax\Crudgen\Console\RemoveApiCrud'
         );
     }
 }

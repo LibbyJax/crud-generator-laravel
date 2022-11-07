@@ -1,11 +1,11 @@
 <?php
 
-namespace Mrdebug\Crudgen\Console;
+namespace LibbyJax\Crudgen\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
-use Mrdebug\Crudgen\Services\Api\RemoveApiCrudService;
-use Mrdebug\Crudgen\Services\MakeGlobalService;
+use LibbyJax\Crudgen\Services\Api\RemoveApiCrudService;
+use LibbyJax\Crudgen\Services\MakeGlobalService;
 
 class RemoveApiCrud extends Command
 {

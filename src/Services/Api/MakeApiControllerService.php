@@ -1,14 +1,14 @@
 <?php
 
-namespace Mrdebug\Crudgen\Services\Api;
+namespace LibbyJax\Crudgen\Services\Api;
 
 
 use Illuminate\Support\Facades\File;
 use Illuminate\Console\Concerns\InteractsWithIO;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Illuminate\Contracts\Foundation\Application;
-use Mrdebug\Crudgen\Services\MakeGlobalService;
-use Mrdebug\Crudgen\Services\PathsAndNamespacesService;
+use LibbyJax\Crudgen\Services\MakeGlobalService;
+use LibbyJax\Crudgen\Services\PathsAndNamespacesService;
 
 class MakeApiControllerService
 {
