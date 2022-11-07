@@ -4,7 +4,7 @@ namespace Mrdebug\Crudgen\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
-use Mrdebug\Crudgen\Services\API\RemoveApiCrudService;
+use Mrdebug\Crudgen\Services\Api\RemoveApiCrudService;
 use Mrdebug\Crudgen\Services\MakeGlobalService;
 
 class RemoveApiCrud extends Command
@@ -23,9 +23,11 @@ class RemoveApiCrud extends Command
      */
     protected $description = 'Remove a REST API operation';
 
-    public RemoveApiCrudService $removeApiCrudService;
-    public MakeGlobalService $makeGlobalService;
-    public function __construct(RemoveApiCrudService $removeApiCrudService,MakeGlobalService $makeGlobalService)
+    /*
+    RemoveApiCrudServicepublic $removeApiCrudService;
+    MakeGlobalServicepublic $makeGlobalService;
+     */
+    public function __construct(RemoveApiCrudService $removeApiCrudService, MakeGlobalService $makeGlobalService)
     {
         parent::__construct();
         $this->removeApiCrudService = $removeApiCrudService;
@@ -40,9 +42,9 @@ class RemoveApiCrud extends Command
     public function handle()
     {
         // we create our variables to respect the naming conventions
-        $crudName         = ucfirst($this->argument('crud_name'));
+        $crudName = ucfirst($this->argument('crud_name'));
         $namingConvention = $this->makeGlobalService->getNamingConvention($crudName);
-        $force            = $this->option('force');
+        $force = $this->option('force');
 
         $this->deleteFile($namingConvention, 'controller', $force);
         $this->deleteFile($namingConvention, 'request', $force);
@@ -52,12 +54,12 @@ class RemoveApiCrud extends Command
 
     private function deleteFile($namingConvention, $fileType, $force)
     {
-        if(File::exists($this->removeApiCrudService->pathsForFiles($namingConvention)[$fileType]))
-        {
-            if ($force || $this->confirm('Do you want to delete this '.$fileType.' '.$this->removeApiCrudService->pathsForFiles($namingConvention)[$fileType].'?'))
-            {
-                if(File::delete($this->removeApiCrudService->pathsForFiles($namingConvention)[$fileType]))
-                    $this->line("<info>".ucfirst($fileType)." deleted</info>");
+        if (File::exists($this->removeApiCrudService->pathsForFiles($namingConvention)[$fileType])) {
+            if ($force || $this->confirm('Do you want to delete this '.$fileType.' '.$this->removeApiCrudService->pathsForFiles($namingConvention)[$fileType].'?')) {
+                if (File::delete($this->removeApiCrudService->pathsForFiles($namingConvention)[$fileType])) {
+                    $this->line('<info>'.ucfirst($fileType).' deleted</info>');
+                }
+
             }
         }
     }
